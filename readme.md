@@ -1,70 +1,45 @@
 # Workopia
 
-Workopia is a job listing website from my [PHP From Scratch course](https://www.traversymedia.com/php-from-scratch). It includes a custom Laravel-like router, controller classes, views, a database layer and a project structure using namespaces and PSR-4 autoloading. It highlights how to structure a PHP project without using any frameworks or libraries.
+Workopia is a job listing website created by Brad Traversy. It includes a custom Laravel-like router, controller classes, views, a database layer and a project structure using namespaces and PSR-4 autoloading. It highlights how to structure a PHP project without using any frameworks or libraries.
 
-![Workopia](/public/images/screen.jpg)
+![Workopia](/src/public/images/screen.jpg)
 
 ## Usage
 
 ### Requirements
 
-- PHP 7.4 or higher
-- MySQL 5.7 or higher
+- Docker
+- Docker Compose
 
 ### Installation
 
-1. Clone the repo into your document root (www, htdocs, etc)
-2. Create a database called `workopia`
-3. Import the `workopia.sql` file into your database
-4. Rename `config/_db.php` to `config/db.php` and update with your credentials
-5. Run `composer install` to set up the autoloading
-6. Set your document root to the `public` directory
-
-### Setting the Document Root
-
-You will need to set your document root to the `public` directory. Here are some instructions for setting the document root for some popular local development tools:
-
-##### PHP built-in server
-
-If you are using the PHP built-in server, you can run the following command from the project root:
-
-`php -S localhost:8000 -t public`
-
-##### XAMPP
-
-If you are using XAMPP, you can set the document root in the `httpd.conf` file. Here is an example:
-
-```conf
-DocumentRoot "C:/xampp/htdocs/workopia/public"
-<Directory "C:/xampp/htdocs/workopia/public">
-```
-
-##### MAMP
-
-If you are using MAMP, you can set the document root in the `httpd.conf` file. Here is an example:
-
-```conf
-DocumentRoot "/Applications/MAMP/htdocs/workopia/public"
-<Directory "/Applications/MAMP/htdocs/workopia/public">
-```
-
-##### Laragon
-
-If you are using Laragon, you can set right-click the icon in the system tray and go to `Apache > sites-enabled > auto.workopia.test.conf`. Your file may be named differently.
-
-You can then set the document root. Here is an example:
-
-```conf
-<VirtualHost *:80>
-    DocumentRoot "C:/laragon/www/workopia/public"
-    ServerName workopia.test
-    ServerAlias *.workopia.test
-    <Directory "C:/laragon/www/workopia/public">
-        AllowOverride All
-        Require all granted
-    </Directory>
-</VirtualHost>
-```
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/mbsurfer/workopia-php-dockerized
+    cd workopia-php-dockerized
+    ```
+2. Copy the example environment variables file and modify it (optional):
+    ```sh
+    cp .env.example .env
+    ```
+   
+3. Build and start the server container and its dependencies from the root directory:
+    ```sh
+    docker-compose up -d --build server
+    ```
+   
+4. Install dependencies
+    ```sh
+    docker-compose run --rm composer install
+   ```
+   
+5. Create the database by importing the `workopia.sql` file
+   - Connect to the database using the settings defined in the .env file
+   - Defaults
+     - hostname: `127.0.0.1`
+     - port: `3307`
+     - username: `workopia_user`
+     - password: `yoursecretpassword`
 
 ## Project Structure and Notes
 

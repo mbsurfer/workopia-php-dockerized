@@ -8,7 +8,7 @@ Session::start();
 
 require '../helpers.php';
 
-// Instatiate the router
+// Instantiate the router
 $router = new Router();
 
 // Get routes
