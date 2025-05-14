@@ -1,10 +1,10 @@
-<?= loadPartial('head') ?>
-<?= loadPartial('navbar') ?>
-<?= loadPartial('top-banner') ?>
+<?php loadPartial('head') ?>
+<?php loadPartial('navbar') ?>
+<?php loadPartial('top-banner') ?>
 
 <section class="container mx-auto p-4 mt-4">
   <div class="rounded-lg shadow-md bg-white p-3">
-    <?= loadPartial('message') ?>
+    <?php loadPartial('message') ?>
     <div class="flex justify-between items-center">
       <a class="block p-4 text-blue-700" href="/listings">
         <i class="fa fa-arrow-alt-circle-left"></i>
@@ -64,5 +64,5 @@
   </a>
 </section>
 
-<?= loadPartial('bottom-banner') ?>
-<?= loadPartial('footer') ?>
+<?php loadPartial('bottom-banner') ?>
+<?php loadPartial('footer') ?>

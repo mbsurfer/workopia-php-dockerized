@@ -1,6 +1,6 @@
-<?= loadPartial('head') ?>
-<?= loadPartial('navbar') ?>
-<?= loadPartial('top-banner') ?>
+<?php loadPartial('head') ?>
+<?php loadPartial('navbar') ?>
+<?php loadPartial('top-banner') ?>
 
 
 <!-- Job Listings -->
@@ -13,7 +13,7 @@
         All Jobs
       <?php endif; ?>
     </div>
-    <?= loadPartial('message') ?>
+    <?php loadPartial('message') ?>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
       <?php foreach ($listings as $listing) : ?>
         <!-- Job Listing 1: Software Engineer -->
@@ -47,5 +47,5 @@
 
 
 
-<?= loadPartial('bottom-banner') ?>
-<?= loadPartial('footer') ?>
+<?php loadPartial('bottom-banner') ?>
+<?php loadPartial('footer') ?>
