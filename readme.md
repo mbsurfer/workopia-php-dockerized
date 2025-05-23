@@ -33,13 +33,15 @@ Workopia is a job listing website created by Brad Traversy. It includes a custom
     docker-compose run --rm composer install
    ```
    
-5. Create the database by importing the `workopia.sql` file
-   - Connect to the database using the settings defined in the .env file
-   - Defaults
-     - hostname: `127.0.0.1`
-     - port: `3307`
-     - username: `workopia_user`
-     - password: `yoursecretpassword`
+5. Set up the database
+   - Connect to the MySQL docker container using the information below.
+      - The connection settings are defined in the .env file
+      - Defaults
+        - hostname: `127.0.0.1`
+        - port: `3307`
+        - username: `workopia_user`
+        - password: `yoursecretpassword`
+   - Create the database by running the SQL commands in the `workopia.sql` file.
 
 ## Project Structure and Notes
 
